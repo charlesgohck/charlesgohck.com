@@ -8,7 +8,7 @@ tags: 'reviews,career'
 # Thoughts
 I am concluding my 4th year as a Software Engineer for Visa. 
 
-Over the course of my career so far, my scope has expanded from mostly producing code, to reviewing and mentoring others, to leading projects and initiatives. I have learnt much from my peers, mentors, and team leads.
+Over the course of my career so far, my scope has expanded from mostly producing code, to reviewing code and mentoring others, to leading projects and initiatives. I have learnt much from my peers, mentors, and team leads.
 
 The landscape of my team's role is evolving. We are now working on generative AI applications in addition to infrastructure automations. It presents great learning opportunities. I look forward to seeing what comes next.
 
