@@ -12,7 +12,7 @@ For 2025, I intend to pursue an AI certification for my current career, the Cert
 
 # 2025 New Year Resolution
 My 2025 new year's resolution includes:
-- Achieve my 12th straight Gold in the yearly IPPT (Indiviudal Physical Proficiency Test)
+- Achieve my 12th consecutive Gold in the yearly IPPT (Indiviudal Physical Proficiency Test)
 - Get CISSP (Certified Information Systems Security Professional) Certified
 - Complete an AI Technical Course
 - Complete [**https://luncheonmeet.app**](https://luncheonmeet.app)
