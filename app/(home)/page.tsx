@@ -501,7 +501,7 @@ function EducationSection() {
       achievements: [
         "Distinction Honours",
         "Management Minor",
-        "Database System Specialization"
+        "Database Systems Specialization"
       ],
     },
   ];
