@@ -243,7 +243,7 @@ function AboutSection() {
   const skills = [
     { name: "Backend Engineering", level: 80 },
     { name: "Databases/Cloud/Infra", level: 70 },
-    { name: "AI", level: 60 },
+    { name: "Artificial Intelligence", level: 60 },
     { name: "Frontend Engineering", level: 50 }
   ];
 
