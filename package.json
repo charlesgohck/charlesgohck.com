@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/speed-insights": "^1.3.1",
     "@wisp-cms/client": "^0.0.23",
     "next": "16.1.6",
     "react": "19.2.3",
