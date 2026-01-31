@@ -46,9 +46,8 @@ function JsonLd() {
       "Software engineer specializing in full-stack development.",
     sameAs: [
       // Add social media URLs here
-      // "https://linkedin.com/in/charlesgohck",
-      // "https://github.com/charlesgohck",
-      // "https://twitter.com/charlesgohck",
+      "https://linkedin.com/in/charlesgohck",
+      "https://github.com/charlesgohck"
     ],
   };
 

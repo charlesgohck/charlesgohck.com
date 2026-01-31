@@ -157,7 +157,7 @@ function HeroSection() {
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up animation-delay-400">
               {/* EDIT: Your title/subtitle */}
-              Software Engineer
+              Software Engineering Professional
             </p>
             <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0 animate-fade-in-up animation-delay-600">
               {/* EDIT: Your tagline */}
@@ -360,22 +360,6 @@ function ExperienceSection() {
       description:
         "Driving and developing of monolithic services and microservices in the domain of infrastructure automation and Gen-AI",
       technologies: ["Java", "Springboot", "Python", "Gen-AI", "SQL"],
-    },
-    {
-      title: "System Administrator Intern",
-      company: "Visa",
-      period: "2019",
-      description:
-        "Development of monolithic services and microservices in the domain of infrastructure automation",
-      technologies: ["Java", "Springboot", "Python", "SQL"],
-    },
-    {
-      title: "System Developer Intern",
-      company: "Infineon Technologies",
-      period: "2018",
-      description:
-        "Development of a bar-code scanning inventory management system",
-      technologies: ["PHP", "HTML", "CSS"],
     }
   ];
 
@@ -629,6 +613,18 @@ function PublicationsSection() {
     //   },
     // },
     {
+      title: "Distributed FIFO On-Demand Queing Container Lifecycle Orchestration System For Heavy Workloads",
+      authors: "Goh Chang Kang, Charles; Mahapatra, Hitika",
+      venue: "Technical Disclosure Commons: Defensive Publications Series",
+      year: "2026",
+      description:
+        "Handling heavy container workloads in a organized manner given limited compute resources.",
+      links: {
+        paper: "https://www.tdcommons.org/dpubs_series/9252/",
+        code: ""
+      },
+    },
+    {
       title: "Safe-Send",
       authors: "Goh Chang Kang, Charles; Loh Guo Yang; Sachin Mathew; Jyoti Sahu; Galvin Leow; Jing Rong Chan",
       venue: "Technical Disclosure Commons: Defensive Publications Series",
@@ -874,9 +870,9 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <AboutSection />
+      <PublicationsSection />
       <ExperienceSection />
       <EducationSection />
-      <PublicationsSection />
       <ContactSection />
       <Footer />
     </div>
