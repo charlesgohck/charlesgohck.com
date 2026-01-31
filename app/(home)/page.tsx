@@ -636,6 +636,7 @@ function PublicationsSection() {
         "The present disclosure relates to a method of performing a Safe-Send transaction that may allow a sender to recall money transferred to a receiver even after the transaction is completed.",
       links: {
         paper: "https://www.tdcommons.org/dpubs_series/6319/",
+        code: ""
       },
     },
   ];
