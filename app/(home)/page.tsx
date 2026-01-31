@@ -284,7 +284,7 @@ function AboutSection() {
                 with technology. 
               </p>
               <p>
-                In my journey so far, I've had the opportunity to work on a wide range of project, which includes: 
+                In my journey so far, I've had the opportunity to work on a wide range of projects, including: 
                 Full-Stack Web Applications centering around infrastructure automations; 
                 Generative-AI Chatbots with Retrieval Augmented Generation capabilities; 
                 Human Triggered and Autonomous AI Agents
