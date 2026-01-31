@@ -358,7 +358,7 @@ function ExperienceSection() {
       company: "Visa",
       period: "2020 - Present",
       description:
-        "Driving development of monolithic services and microservices in the domain of infrastructure automation and Gen-AI",
+        "Driving and developing of monolithic services and microservices in the domain of infrastructure automation and Gen-AI",
       technologies: ["Java", "Springboot", "Python", "Gen-AI", "SQL"],
     },
     {
