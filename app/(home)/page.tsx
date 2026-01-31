@@ -500,7 +500,8 @@ function EducationSection() {
         "Major in Computer Science with Distinction Honours and a management minor",
       achievements: [
         "Distinction Honours",
-        "Management Minor"
+        "Management Minor",
+        "Database System Specialization"
       ],
     },
   ];

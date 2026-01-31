@@ -131,14 +131,20 @@ body {
 }
 
 .animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .animate-fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
   animation: fadeInLeft 0.8s ease-out forwards;
 }
 
 .animate-fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
   animation: fadeInRight 0.8s ease-out forwards;
 }
 
