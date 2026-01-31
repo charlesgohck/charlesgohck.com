@@ -12,11 +12,65 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://charlesgohck.com";
+
 export const metadata: Metadata = {
-  title: "Charles Goh C.K",
-  description: "About and Blog",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Charles Goh C.K | Software Engineer",
+    template: "%s | Charles Goh C.K",
+  },
+  description:
+    "Software engineer specializing in full-stack development. Explore my portfolio, experience, publications, and blog on technology and software engineering.",
+  keywords: [
+    "Charles Goh",
+    "Software Engineer",
+    "Full Stack Developer",
+    "Web Development",
+    "Technology Blog",
+    "Software Development",
+  ],
+  authors: [{ name: "Charles Goh C.K" }],
+  creator: "Charles Goh C.K",
+  publisher: "Charles Goh C.K",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Charles Goh C.K",
+    title: "Charles Goh C.K | Software Engineer",
+    description:
+      "Software engineer specializing in full-stack development. Explore my portfolio, experience, publications, and blog.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Charles Goh C.K | Software Engineer",
+    description:
+      "Software engineer specializing in full-stack development. Explore my portfolio, experience, publications, and blog.",
+    creator: "@charlesgohck",
+  },
+  verification: {
+    // Add your verification codes here when available
+    // google: "your-google-verification-code",
+    // yandex: "your-yandex-verification-code",
+  },
+  alternates: {
+    canonical: siteUrl,
   },
 };
 

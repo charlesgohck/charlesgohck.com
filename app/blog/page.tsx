@@ -2,9 +2,37 @@ import { wisp } from "@/lib/wisp";
 import Link from "next/link";
 import { Metadata } from "next";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://charlesgohck.com";
+
 export const metadata: Metadata = {
-  title: "Blog | Charles Goh C.K",
-  description: "Thoughts on software engineering, technology, and more.",
+  title: "Blog",
+  description:
+    "Thoughts on software engineering, technology, web development, and more. Stay updated with the latest insights and tutorials.",
+  keywords: [
+    "Software Engineering Blog",
+    "Technology Blog",
+    "Web Development",
+    "Programming Tutorials",
+    "Tech Insights",
+    "Charles Goh Blog",
+  ],
+  openGraph: {
+    type: "website",
+    url: `${siteUrl}/blog`,
+    title: "Blog | Charles Goh C.K",
+    description:
+      "Thoughts on software engineering, technology, web development, and more. Stay updated with the latest insights and tutorials.",
+    siteName: "Charles Goh C.K",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Charles Goh C.K",
+    description:
+      "Thoughts on software engineering, technology, web development, and more.",
+  },
+  alternates: {
+    canonical: `${siteUrl}/blog`,
+  },
 };
 
 // Revalidate every hour
@@ -273,8 +301,65 @@ export default async function BlogPage({
     getTags(),
   ]);
 
+  // JSON-LD structured data for blog listing
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Blog | Charles Goh C.K",
+    description:
+      "Thoughts on software engineering, technology, web development, and more.",
+    url: `${siteUrl}/blog`,
+    author: {
+      "@type": "Person",
+      name: "Charles Goh C.K",
+      url: siteUrl,
+    },
+    blogPost: posts.slice(0, 10).map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.description || undefined,
+      url: `${siteUrl}/blog/${post.slug}`,
+      datePublished: new Date(post.createdAt).toISOString(),
+      image: post.image || undefined,
+      author: {
+        "@type": "Person",
+        name: post.author?.name || "Charles Goh C.K",
+      },
+    })),
+  };
+
+  // Breadcrumb structured data
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${siteUrl}/blog`,
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <Navigation />
 
       <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://charlesgohck.com";
+
 // Revalidate every hour
 export const revalidate = 3600;
 
@@ -60,27 +62,52 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Post Not Found | Charles Goh C.K",
+      title: "Post Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
+  const postUrl = `${siteUrl}/blog/${slug}`;
+  const keywords = post.tags?.map((tag) => tag.name) || [];
+
   return {
-    title: `${post.title} | Charles Goh C.K`,
+    title: post.title,
     description: post.description || undefined,
+    keywords: keywords.length > 0 ? keywords : undefined,
+    authors: post.author?.name ? [{ name: post.author.name }] : undefined,
     openGraph: {
+      type: "article",
+      url: postUrl,
       title: post.title,
       description: post.description || undefined,
-      images: post.image ? [post.image] : undefined,
-      type: "article",
+      images: post.image
+        ? [
+            {
+              url: post.image,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : undefined,
+      siteName: "Charles Goh C.K",
       publishedTime: new Date(post.createdAt).toISOString(),
       modifiedTime: new Date(post.updatedAt).toISOString(),
       authors: post.author?.name ? [post.author.name] : undefined,
+      tags: keywords.length > 0 ? keywords : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description || undefined,
       images: post.image ? [post.image] : undefined,
+      creator: "@charlesgohck",
+    },
+    alternates: {
+      canonical: postUrl,
     },
   };
 }
@@ -212,9 +239,73 @@ export default async function BlogPostPage({
   }
 
   const readingTime = calculateReadingTime(post.content);
+  const postUrl = `${siteUrl}/blog/${slug}`;
+
+  // JSON-LD structured data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description || undefined,
+    image: post.image || undefined,
+    datePublished: new Date(post.createdAt).toISOString(),
+    dateModified: new Date(post.updatedAt).toISOString(),
+    author: {
+      "@type": "Person",
+      name: post.author?.name || "Charles Goh C.K",
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Charles Goh C.K",
+      url: siteUrl,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    wordCount: post.content.replace(/<[^>]*>/g, "").split(/\s+/).filter(Boolean).length,
+    keywords: post.tags?.map((tag) => tag.name).join(", ") || undefined,
+  };
+
+  // Breadcrumb structured data
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${siteUrl}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: postUrl,
+      },
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <Navigation />
 
       <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
