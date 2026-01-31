@@ -241,8 +241,8 @@ function AboutSection() {
 
   // EDIT: Your skills
   const skills = [
-    { name: "Backend Engineering", level: 80 },
-    { name: "Databases/Cloud/Infra", level: 70 },
+    { name: "Backend Engineering", level: 70 },
+    { name: "Databases/Cloud/Infra", level: 60 },
     { name: "Artificial Intelligence", level: 60 },
     { name: "Frontend Engineering", level: 50 }
   ];
@@ -489,7 +489,7 @@ function EducationSection() {
       school: "Georgia Institute of Technology",
       period: "2022 - 2024",
       description:
-        "Specialized in Interactive Intelligence.",
+        "Specialization in Interactive Intelligence.",
       achievements: ["Interactive Intelligence Specialization"],
     },
     {
@@ -634,7 +634,7 @@ function PublicationsSection() {
       venue: "Technical Disclosure Commons: Defensive Publications Series",
       year: "2023",
       description:
-        "The present disclosure relates to a method of performing a Safe-Send transaction that may allow a sender to recall money transferred to a receiver even after the transaction is completed.",
+        "Performing a Safe-Send transaction allows the sender to recall it if needed.",
       links: {
         paper: "https://www.tdcommons.org/dpubs_series/6319/",
         code: ""
