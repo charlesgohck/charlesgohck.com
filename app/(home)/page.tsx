@@ -613,7 +613,7 @@ function PublicationsSection() {
     //   },
     // },
     {
-      title: "Distributed FIFO On-Demand Queing Container Lifecycle Orchestration System For Heavy Workloads",
+      title: "Distributed FIFO On-Demand Queuing Container Lifecycle Orchestration System For Heavy Workloads",
       authors: "Goh Chang Kang, Charles; Mahapatra, Hitika",
       venue: "Technical Disclosure Commons: Defensive Publications Series",
       year: "2026",
