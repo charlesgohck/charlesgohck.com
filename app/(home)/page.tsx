@@ -241,10 +241,10 @@ function AboutSection() {
 
   // EDIT: Your skills
   const skills = [
-    { name: "Backend Engineering", level: 70 },
+    { name: "Full-Stack Development", level: 70 },
     { name: "Databases/Cloud/Infra", level: 60 },
     { name: "Artificial Intelligence", level: 60 },
-    { name: "Frontend Engineering", level: 50 }
+    { name: "Software Security", level: 50 }
   ];
 
   return (
@@ -359,7 +359,7 @@ function ExperienceSection() {
       period: "2020 - Present",
       description:
         "Driving and developing of monolithic services and microservices in the domain of infrastructure automation and Gen-AI",
-      technologies: ["Java", "Springboot", "Python", "Gen-AI", "SQL"],
+      technologies: ["Java", "Springboot", "Python", "Gen-AI", "SQL", "Linux"],
     }
   ];
 
