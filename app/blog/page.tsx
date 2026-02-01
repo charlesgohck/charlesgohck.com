@@ -349,7 +349,7 @@ export default async function BlogPage({
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-sans antialiased">
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
