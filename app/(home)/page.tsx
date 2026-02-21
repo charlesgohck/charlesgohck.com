@@ -143,7 +143,7 @@ function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[60vw] xl:max-w-[50vw] px-4 sm:px-6 lg:px-8 py-32">
+      <div className="relative z-10 mx-auto w-full max-w-[95vw] sm:max-w-[95vw] xl:max-w-[50vw] px-4 sm:px-6 lg:px-8 py-32">
         <div className="w-full">
           {/* Text Content */}
           <div className="text-left">
