@@ -45,6 +45,7 @@ interface BlogPost {
   description: string | null;
   slug: string;
   createdAt: Date;
+  publishedAt: Date | null;
   author: {
     name: string | null;
     image: string | null;
@@ -85,6 +86,7 @@ function formatDate(date: Date): string {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 
@@ -242,7 +244,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
             )}
             <span>{post.author?.name || "Anonymous"}</span>
           </div>
-          <time dateTime={new Date(post.createdAt).toISOString()}>{formatDate(post.createdAt)}</time>
+          <time dateTime={new Date(post.publishedAt ?? post.createdAt).toISOString()}>{formatDate(post.publishedAt ?? post.createdAt)}</time>
         </div>
       </div>
     </article>
@@ -319,7 +321,7 @@ export default async function BlogPage({
       headline: post.title,
       description: post.description || undefined,
       url: `${siteUrl}/blog/${post.slug}`,
-      datePublished: new Date(post.createdAt).toISOString(),
+      datePublished: new Date(post.publishedAt ?? post.createdAt).toISOString(),
       image: post.image || undefined,
       author: {
         "@type": "Person",

@@ -17,6 +17,7 @@ interface BlogPost {
   slug: string;
   createdAt: Date;
   updatedAt: Date;
+  publishedAt: Date | null;
   author: {
     name: string | null;
     image: string | null;
@@ -94,7 +95,7 @@ export async function generateMetadata({
           ]
         : undefined,
       siteName: "Charles Goh C.K",
-      publishedTime: new Date(post.createdAt).toISOString(),
+      publishedTime: new Date(post.publishedAt ?? post.createdAt).toISOString(),
       modifiedTime: new Date(post.updatedAt).toISOString(),
       authors: post.author?.name ? [post.author.name] : undefined,
       tags: keywords.length > 0 ? keywords : undefined,
@@ -117,6 +118,7 @@ function formatDate(date: Date): string {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 
@@ -248,7 +250,7 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.description || undefined,
     image: post.image || undefined,
-    datePublished: new Date(post.createdAt).toISOString(),
+    datePublished: new Date(post.publishedAt ?? post.createdAt).toISOString(),
     dateModified: new Date(post.updatedAt).toISOString(),
     author: {
       "@type": "Person",
@@ -376,8 +378,8 @@ export default async function BlogPostPage({
                 <p className="font-medium text-foreground">
                   {post.author?.name || "Anonymous"}
                 </p>
-                <time dateTime={new Date(post.createdAt).toISOString()}>
-                  {formatDate(post.createdAt)}
+                <time dateTime={new Date(post.publishedAt ?? post.createdAt).toISOString()}>
+                  {formatDate(post.publishedAt ?? post.createdAt)}
                 </time>
               </div>
             </div>
