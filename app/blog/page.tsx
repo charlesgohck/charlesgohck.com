@@ -374,7 +374,7 @@ export default async function BlogPage({
               <div className="flex items-center">
                 <div className="flex items-center gap-2 bg-[#0c0c0c] px-4 py-2 border-r border-[#3d3d3d]">
                   <span className="h-3 w-3 rounded-full bg-[#E95420]" aria-hidden />
-                  <span className="text-xs font-medium text-[#cccccc]">Ubuntu</span>
+                  <span className="text-xs font-medium text-[#cccccc]">computer</span>
                 </div>
                 <span className="px-3 py-2 text-[#6d6d6d] text-sm select-none">+</span>
               </div>
@@ -388,7 +388,7 @@ export default async function BlogPage({
 
             <div className="space-y-4 bg-background p-5 sm:p-6 md:p-8">
               <p className="font-mono text-sm">
-                <span className="text-[#4EC94E]">charles@ubuntu</span>
+                <span className="text-[#4EC94E]">charles@computer</span>
                 <span className="text-foreground">:</span>
                 <span className="text-blue-400">~/blog</span>
                 <span className="text-foreground">$ </span>
@@ -406,7 +406,7 @@ export default async function BlogPage({
               </div>
 
               <p className="font-mono text-sm">
-                <span className="text-[#4EC94E]">charles@ubuntu</span>
+                <span className="text-[#4EC94E]">charles@computer</span>
                 <span className="text-foreground">:</span>
                 <span className="text-blue-400">~/blog</span>
                 <span className="text-foreground">$ </span>
