@@ -143,29 +143,35 @@ function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[80vw] xl:max-w-[70vw] px-4 sm:px-6 lg:px-8 py-32">
+      <div className="relative z-10 mx-auto w-full max-w-[60vw] xl:max-w-[50vw] px-4 sm:px-6 lg:px-8 py-32">
         <div className="w-full">
           {/* Text Content */}
           <div className="text-left">
-            <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm animate-fade-in-up">
-              <div className="flex items-center justify-between border-b border-border bg-muted/60 px-4 py-3">
-                <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-red-500" aria-hidden />
-                  <span className="h-3 w-3 rounded-full bg-yellow-500" aria-hidden />
-                  <span className="h-3 w-3 rounded-full bg-green-500" aria-hidden />
+            <div className="overflow-hidden rounded-xl border border-[#3d3d3d] bg-card shadow-sm animate-fade-in-up">
+              {/* Windows Terminal title bar */}
+              <div className="flex items-center justify-between bg-[#1e1e1e] border-b border-[#3d3d3d]">
+                {/* Tabs */}
+                <div className="flex items-center">
+                  <div className="flex items-center gap-2 bg-[#0c0c0c] px-4 py-2 border-r border-[#3d3d3d]">
+                    <span className="h-3 w-3 rounded-full bg-[#E95420]" aria-hidden />
+                    <span className="text-xs font-medium text-[#cccccc]">Ubuntu</span>
+                  </div>
+                  <span className="px-3 py-2 text-[#6d6d6d] text-sm select-none">+</span>
                 </div>
-                <p className="text-xs font-medium text-muted-foreground">
-                  charles@terminal — portfolio
-                </p>
-                <span className="w-14" aria-hidden />
+                {/* Windows window controls */}
+                <div className="flex items-center text-[#cccccc]">
+                  <span className="px-4 py-2 hover:bg-[#3d3d3d] text-xs cursor-default select-none" aria-label="Minimize">─</span>
+                  <span className="px-4 py-2 hover:bg-[#3d3d3d] text-xs cursor-default select-none" aria-label="Maximize">&#9633;</span>
+                  <span className="px-4 py-2 hover:bg-red-600 text-xs cursor-default select-none" aria-label="Close">&#10005;</span>
+                </div>
               </div>
 
               <div className="space-y-5 bg-background p-5 sm:p-6 md:p-7">
-                <p className="font-mono text-sm text-muted-foreground animate-fade-in-up animation-delay-200">
-                  <span className="text-primary">charles@terminal</span>
-                  <span className="text-muted-foreground">:</span>
-                  <span className="text-blue-500 dark:text-blue-400">~/portfolio</span>
-                  <span className="text-muted-foreground">$ </span>
+                <p className="font-mono text-sm animate-fade-in-up animation-delay-200">
+                  <span className="text-[#4EC94E]">charles@ubuntu</span>
+                  <span className="text-foreground">:</span>
+                  <span className="text-blue-400">~/portfolio</span>
+                  <span className="text-foreground">$ </span>
                   <span className="text-foreground">whoami</span>
                 </p>
 
@@ -184,11 +190,11 @@ function HeroSection() {
                   </p>
                 </div>
 
-                <p className="font-mono text-sm text-muted-foreground animate-fade-in-up animation-delay-600">
-                  <span className="text-primary">charles@terminal</span>
-                  <span className="text-muted-foreground">:</span>
-                  <span className="text-blue-500 dark:text-blue-400">~/portfolio</span>
-                  <span className="text-muted-foreground">$ </span>
+                <p className="font-mono text-sm animate-fade-in-up animation-delay-600">
+                  <span className="text-[#4EC94E]">charles@ubuntu</span>
+                  <span className="text-foreground">:</span>
+                  <span className="text-blue-400">~/portfolio</span>
+                  <span className="text-foreground">$ </span>
                   <span className="text-foreground">./next-step.sh</span>
                 </p>
 
