@@ -143,57 +143,73 @@ function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 mx-auto w-full max-w-[80vw] xl:max-w-[70vw] px-4 sm:px-6 lg:px-8 py-32">
+        <div className="w-full">
           {/* Text Content */}
-          <div className="text-center lg:text-left">
-            <p className="text-sm md:text-base font-medium text-muted-foreground mb-4 animate-fade-in-up">
-              {/* EDIT: Your greeting */}
-              Hello, I&apos;m
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in-up animation-delay-200">
-              {/* EDIT: Your name */}
-              Charles Goh C.K
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up animation-delay-400">
-              {/* EDIT: Your title/subtitle */}
-              Software Engineering Professional
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0 animate-fade-in-up animation-delay-600">
-              {/* EDIT: Your tagline */}
-              Solving problems in systems and software.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-800">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-              >
-                Get in Touch
-              </a>
-              <a
-                href="#about"
-                className="inline-flex items-center justify-center rounded-full border border-border bg-background px-8 py-3 text-sm font-medium text-foreground transition-all hover:bg-accent hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
+          <div className="text-left">
+            <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm animate-fade-in-up">
+              <div className="flex items-center justify-between border-b border-border bg-muted/60 px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full bg-red-500" aria-hidden />
+                  <span className="h-3 w-3 rounded-full bg-yellow-500" aria-hidden />
+                  <span className="h-3 w-3 rounded-full bg-green-500" aria-hidden />
+                </div>
+                <p className="text-xs font-medium text-muted-foreground">
+                  charles@terminal — portfolio
+                </p>
+                <span className="w-14" aria-hidden />
+              </div>
 
-          {/* Hero Image */}
-          <div className="relative flex justify-center lg:justify-end animate-fade-in-right animation-delay-400">
-            <div className="relative w-72 h-56 md:w-96 md:h-72 lg:w-[480px] lg:h-80">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 animate-float" />
-              <div className="absolute inset-3 rounded-xl overflow-hidden border-2 border-border shadow-2xl">
-                {/* EDIT: Replace with your image */}
-                {/* Laptop with code and coffee - royalty free from Unsplash */}
-                <img
-                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
-                  alt="Laptop with code"
-                  className="w-full h-full object-cover"
-                />
+              <div className="space-y-5 bg-background p-5 sm:p-6 md:p-7">
+                <p className="font-mono text-sm text-muted-foreground animate-fade-in-up animation-delay-200">
+                  <span className="text-primary">charles@terminal</span>
+                  <span className="text-muted-foreground">:</span>
+                  <span className="text-blue-500 dark:text-blue-400">~/portfolio</span>
+                  <span className="text-muted-foreground">$ </span>
+                  <span className="text-foreground">whoami</span>
+                </p>
+
+                <div className="rounded-md border border-border bg-muted/30 p-4 md:p-5 animate-fade-in-up animation-delay-400">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                    Hello, I&apos;m
+                  </p>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+                    Charles Goh C.K
+                  </h1>
+                  <p className="text-xl md:text-2xl text-muted-foreground mb-4">
+                    Software Engineering Professional
+                  </p>
+                  <p className="text-base md:text-lg text-muted-foreground max-w-lg">
+                    Solving problems in systems and software.
+                  </p>
+                </div>
+
+                <p className="font-mono text-sm text-muted-foreground animate-fade-in-up animation-delay-600">
+                  <span className="text-primary">charles@terminal</span>
+                  <span className="text-muted-foreground">:</span>
+                  <span className="text-blue-500 dark:text-blue-400">~/portfolio</span>
+                  <span className="text-muted-foreground">$ </span>
+                  <span className="text-foreground">./next-step.sh</span>
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-800">
+                  <a
+                    href="#contact"
+                    className="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  >
+                    Get in Touch
+                  </a>
+                  <a
+                    href="#about"
+                    className="inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-background px-8 py-3 text-sm font-medium text-foreground transition-all hover:bg-accent hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  >
+                    Learn More
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Scroll indicator */}

@@ -365,13 +365,47 @@ export default async function BlogPage({
       <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Header */}
         <header className="mb-12 animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Blog
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Thoughts on software engineering, technology, and the occasional
-            adventure into new domains.
-          </p>
+          <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+            <div className="flex items-center justify-between border-b border-border bg-muted/60 px-4 py-3">
+              <div className="flex items-center gap-2">
+                <span className="h-3 w-3 rounded-full bg-red-500" aria-hidden />
+                <span className="h-3 w-3 rounded-full bg-yellow-500" aria-hidden />
+                <span className="h-3 w-3 rounded-full bg-green-500" aria-hidden />
+              </div>
+              <p className="text-xs font-medium text-muted-foreground">
+                charles@terminal — blog
+              </p>
+              <span className="w-14" aria-hidden />
+            </div>
+
+            <div className="space-y-4 bg-background p-5 sm:p-6 md:p-8">
+              <p className="font-mono text-sm text-muted-foreground">
+                <span className="text-primary">charles@terminal</span>
+                <span className="text-muted-foreground">:</span>
+                <span className="text-blue-500 dark:text-blue-400">~/blog</span>
+                <span className="text-muted-foreground">$ </span>
+                <span className="text-foreground">ls -la</span>
+              </p>
+
+              <div className="rounded-md border border-border bg-muted/30 p-4 md:p-5">
+                <h1 className="text-3xl font-bold text-foreground md:text-5xl">
+                  Blog
+                </h1>
+                <p className="mt-3 max-w-2xl text-base text-muted-foreground md:text-lg">
+                  Thoughts on software engineering, technology, and the
+                  occasional adventure into new domains.
+                </p>
+              </div>
+
+              <p className="font-mono text-sm text-muted-foreground">
+                <span className="text-primary">charles@terminal</span>
+                <span className="text-muted-foreground">:</span>
+                <span className="text-blue-500 dark:text-blue-400">~/blog</span>
+                <span className="text-muted-foreground">$ </span>
+                <span className="text-foreground">find posts -type f | wc -l</span>
+              </p>
+            </div>
+          </div>
         </header>
 
         {/* Tag Filters */}
