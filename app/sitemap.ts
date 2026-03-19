@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { wisp } from "@/lib/wisp";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://charlesgohck.com";
+const siteUrl = process.env.PUBLIC_SITE_URL || "https://charlesgohck.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages

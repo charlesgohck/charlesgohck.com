@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://charlesgohck.com";
+const siteUrl = process.env.PUBLIC_SITE_URL || "https://charlesgohck.com";
 
 export const metadata: Metadata = {
   title: "Charles Goh C.K | Software Engineer",

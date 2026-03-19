@@ -2,7 +2,7 @@ import { wisp } from "@/lib/wisp";
 import Link from "next/link";
 import { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://charlesgohck.com";
+const siteUrl = process.env.PUBLIC_SITE_URL || "https://charlesgohck.com";
 
 export const metadata: Metadata = {
   title: "Blog",
